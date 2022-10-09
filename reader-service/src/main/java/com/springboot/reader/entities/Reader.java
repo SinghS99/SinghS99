@@ -13,30 +13,43 @@ import javax.persistence.Table;
 public class Reader {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer readerid;
+    private int readerid;
+	private int bookid;
+	private long paymentid;
 	private String name;
 	private String email;
-	//private String publishername;
-	//private String category;
-	//private Integer bookid;
-
-//	private LocalDate publishedDate;
-//	private Boolean status;
+	private String subscriptionstatus;
 	
 	public Reader() {
 		super();
 	}
-	public Reader(Integer readerid, String name, String email) {
+	public Reader(int readerid, int bookid, long paymentid, String name, String email,
+			String subscriptionstatus) {
 		super();
 		this.readerid = readerid;
+		this.bookid = bookid;
+		this.paymentid = paymentid;
 		this.name = name;
 		this.email = email;
+		this.subscriptionstatus = subscriptionstatus;
 	}
 	public Integer getReaderid() {
 		return readerid;
 	}
-	public void setReaderid(Integer readerid) {
+	public void setReaderid(int readerid) {
 		this.readerid = readerid;
+	}
+	public Integer getBookid() {
+		return bookid;
+	}
+	public void setBookid(int bookid) {
+		this.bookid = bookid;
+	}
+	public long getPaymentid() {
+		return paymentid;
+	}
+	public void setPaymentid(long paymentid) {
+		this.paymentid = paymentid;
 	}
 	public String getName() {
 		return name;
@@ -50,12 +63,20 @@ public class Reader {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getSubscriptionstatus() {
+		return subscriptionstatus;
+	}
+	public void setSubscriptionstatus(String subscriptionstatus) {
+		this.subscriptionstatus = subscriptionstatus;
+	}
 	@Override
 	public String toString() {
-		return "Reader [readerid=" + readerid + ", name=" + name + ", email=" + email + "]";
+		return "Reader [readerid=" + readerid + ", bookid=" + bookid + ", paymentid=" + paymentid + ", name=" + name
+				+ ", email=" + email + ", subscriptionstatus=" + subscriptionstatus + "]";
 	}
-
 	
+
+
 	
 	
 	
